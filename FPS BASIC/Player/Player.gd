@@ -21,6 +21,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg2rad(-event.relative.x*mouse_sensitivity))
 		head.rotate_x(deg2rad(-event.relative.y*mouse_sensitivity))
+		head.rotation.x=clamp(head.rotation.x,-0.9,0.9)
 
 	if Input.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
